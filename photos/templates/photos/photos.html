@@ -1,9 +1,10 @@
 <html>
+{% load staticfiles %}
 {% for photo in photos %}
     <div>
         <h1><a href="">{{ photo }}</a></h1>
         {{url}}
-         <img src='{{ photo.image }}' /> {{photo.image.url}}
+         <img src="{{photo.image.url}}" /> {{photo.image.url}}
         <p>created: {{ photo.created_date }}</p>
     </div>
 {% endfor %}
