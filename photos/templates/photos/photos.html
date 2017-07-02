@@ -2,7 +2,7 @@
 <head>
 <style>
 .my-image	{
-	width : 600px;
+	width : 400px;
 	height: auto;
 }
 </style>
@@ -11,10 +11,12 @@
 {% load staticfiles %}
 {% for photo in photos %}
     <div>
-        <img class="my-image" src="{{photo.image.url}}" />
-        <a href="./{{ photo.id }}">{{ photo }}</a>
+        <img class="my-image" src="{{photo.image.url}}" /><br/>
+        <h3><a href="./{{ photo.id }}">{{ photo }}</a></h3>
         <p>created: {{ photo.created_date }}</p>
     </div>
 {% endfor %}
+
+<button><a href="./upload">글쓰기</a></button>
 </body>
 </html>
