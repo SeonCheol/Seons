@@ -1,11 +1,20 @@
 <html>
+<head>
+<style>
+.my-image	{
+	width : 600px;
+	height: auto;
+}
+</style>
+</head>
+<body>
 {% load staticfiles %}
 {% for photo in photos %}
     <div>
-        <h1><a href="">{{ photo }}</a></h1>
-        {{url}}
-         <img src="{{photo.image.url}}" />
+        <img class="my-image" src="{{photo.image.url}}" />
+        <a href="./{{ photo.id }}">{{ photo }}</a>
         <p>created: {{ photo.created_date }}</p>
     </div>
 {% endfor %}
+</body>
 </html>
