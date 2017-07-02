@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.core.urlresolvers import reverse
 # Create your models here.
 
 class Photo(models.Model):
@@ -21,3 +22,7 @@ class Photo(models.Model):
 		super(Photo, self).delete(*args, **kwagrs)
 	def __str__(self):
 		return self.content
+
+	def get_absolute_url(self):
+		url = reverse('detail', kwargs={'pk': self.id})
+		return url

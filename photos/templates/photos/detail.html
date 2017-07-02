@@ -1,1 +1,9 @@
-;;
+<html>
+<a href="../">menu</a>
+{% load staticfiles %}
+    <div>
+        <img src="{{photo.image.url}}" />
+        <h1><a href="">{{ photo }}</a></h1>
+        <p>created: {{ photo.created_date }}</p>
+    </div>
+</html>

@@ -11,14 +11,14 @@ def hello(request):
 
 def detail(request, pk):
 	photo = Photo.objects.get(id=pk)
-	msg = (
-		
-        '<p>주소는 {url}</p>'.format(url=photo.image.url),
-        '<p><img src="{url}" /></p>'.format(url=photo.image.url),
-        )
-	return HttpResponse(msg)
+	#msg = (
+	#	
+     #   '<p>주소는 {url}</p>'.format(url=photo.image.url),
+     #   '<p><img src="{url}" /></p>'.format(url=photo.image.url),
+     #   )
+	#return HttpResponse(msg)
 	#photo = Photo.objects.filter(id=pk)
-	#return render(request, 'photos/detail.html',	 {'photo': photo})
+	return render(request, 'photos/detail.html',	 {'photo': photo})
 
 def upload(request):
 	if request.method == "GET":
