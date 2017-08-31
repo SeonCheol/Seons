@@ -20,6 +20,7 @@ class Photo(models.Model):
 		self.image.delete()
 		self.filtered_image.delete()
 		super(Photo, self).delete(*args, **kwagrs)
+		
 	def __str__(self):
 		return self.content
 
